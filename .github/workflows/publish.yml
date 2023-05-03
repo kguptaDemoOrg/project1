@@ -15,7 +15,7 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
         with:
-          path: ./project1
+          path: ./sampleProject
       
       - uses: actions/checkout@v3
         with:
@@ -24,7 +24,7 @@ jobs:
           path: ./.github
 
       - name: Replicate file
-        run: cp ./project1/README.md ./.github/profile/README.md
+        run: cp ./sampleProject/README.md ./.github/profile/README.md
         
       - name: Push changes to GitHub
         run: |
