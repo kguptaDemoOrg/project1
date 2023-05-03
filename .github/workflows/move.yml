@@ -23,17 +23,8 @@ jobs:
           token: ${{ secrets.GH_TOKEN }}
           path: ./project2
 
-      - name: Run dir
-        run: dir
-
-      - name: Show src contents
-        run: cat ./project1/src.txt
-
       - name: Update files
         run: cp ./project1/src.txt ./project2/dest.txt
-        
-      - name: Show dest contents
-        run: cat ./project2/dest.txt
         
       - name: Push changes
         run: |
