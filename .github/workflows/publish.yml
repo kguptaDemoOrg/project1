@@ -1,4 +1,4 @@
-name: Update file
+name: Update README.md
 
 on:
   push:
@@ -19,18 +19,18 @@ jobs:
       
       - uses: actions/checkout@v3
         with:
-          repository: kguptaDemoOrg/project2
+          repository: kguptaDemoOrg/.github
           token: ${{ secrets.GH_TOKEN }}
-          path: ./project2
+          path: ./.github
 
       - name: Replicate file
-        run: cp ./project1/src.txt ./project2/dest.txt
+        run: cp ./project1/README.md ./.github/profile/README.md
         
       - name: Push changes to GitHub
         run: |
-          cd ./project2
+          cd ./.github
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git add .
-          git commit -m "Updated txt file"
+          git commit -m "Updated README.md"
           git push
